@@ -29,7 +29,10 @@ import { HousingService } from "../housing.service";
     </section>
     <section class="results">
       <app-housing-location
-        *ngFor="let housingLocation of filteredLocationList"
+        *ngFor="
+          let housingLocation of filteredLocationList;
+          trackBy: trackByHousingLocation
+        "
         [housingLocationProps]="housingLocation"
       ></app-housing-location>
     </section>
@@ -43,7 +46,8 @@ export class HomeComponent {
   housingService: HousingService = inject(HousingService);
 
   constructor() {
-    this.filteredLocationList = this.housingService.getHousingLocations();
+    this.housingLocationList = this.housingService.getHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
   }
 
   // Função que filtra os dados de acordo com o que foi dígitado na barra de pesquisa.
@@ -55,6 +59,13 @@ export class HomeComponent {
       (housingLocation) =>
         housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );
+  }
+
+  trackByHousingLocation(
+    index: number,
+    housingLocation: HousingLocation
+  ): number {
+    return housingLocation.id;
   }
 }
 

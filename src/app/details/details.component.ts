@@ -47,10 +47,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
           <label for="Last-name">Last Name</label>
           <input type="text" id="last-name" formControlName="lastName" />
 
-          <label for="email">First Name</label>
+          <label for="email">Email</label>
           <input type="text" id="email" formControlName="email" />
 
-          <button type="button" class="primary">Apply now</button>
+          <button type="submit" class="primary">Apply now</button>
         </form>
       </section>
     </article>
@@ -67,22 +67,27 @@ export class DetailsComponent {
 
   // 'FormGroup' representa uma coleção de controle que compôem um formulário.
   applyForm = new FormGroup({
-    firstName: new FormControl(""),
-    lastName: new FormControl(""),
-    email: new FormControl(""),
+    firstName: new FormControl<string>(""),
+    lastName: new FormControl<string>(""),
+    email: new FormControl<string>(""),
   });
 
   constructor() {
     const housingLocationId = this.route.snapshot.params["id"];
-    this.housingLocation =
-      this.housingService.getHousingLocationById(housingLocationId);
 
-    // const housingLocationId = this.route.snapshot.params["id"];
-    // this.housingService
-    //   .getHousingLocationById(housingLocationId)
-    //   .then((housingLocation) => {
-    //     this.housingLocation = housingLocation;
-    //   });
+    this.housingLocation = this.housingService.getHousingLocationById(
+      parseInt(housingLocationId)
+    );
+
+    /*
+    const housingLocationId = this.route.snapshot.params["id"];
+     this.housingService
+        .getHousingLocationById(housingLocationId)
+        .then((housingLocation) => {
+            this.housingLocation = housingLocation;
+          } 
+        ); 
+    */
   }
 
   // Passando os valores recebidos no formulário para o 'Service' que trata-rá os dados.
