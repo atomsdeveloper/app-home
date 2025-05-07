@@ -30,7 +30,7 @@ import { HousingService } from "../housing.service";
     <section class="results">
       <app-housing-location
         *ngFor="let housingLocation of filteredLocationList"
-        [housingLocation]="housingLocation"
+        [housingLocationProps]="housingLocation"
       ></app-housing-location>
     </section>
   `,

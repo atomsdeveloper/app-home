@@ -15,20 +15,20 @@ import { HousingLocation } from "../housingLocation";
     <section class="listing">
       <img
         class="listing-photo"
-        [src]="housingLocation.photo"
-        alt="Exterior photo of {{ housingLocation.name }}"
+        [src]="housingLocationProps.photo"
+        alt="Exterior photo of {{ housingLocationProps.name }}"
       />
-      <h2 class="listing-heading">{{ housingLocation.name }}</h2>
+      <h2 class="listing-heading">{{ housingLocationProps.name }}</h2>
       <p class="listing-location">
-        {{ housingLocation.city }}, {{ housingLocation.state }}
+        {{ housingLocationProps.city }}, {{ housingLocationProps.state }}
       </p>
-      <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+      <a [routerLink]="['/details', housingLocationProps.id]">Learn More</a>
     </section>
   `,
   styleUrls: ["./housing-location.component.css"],
 })
 export class HousingLocationComponent {
-  @Input() housingLocation!: HousingLocation;
+  @Input() housingLocationProps!: HousingLocation; // Recebendo 'props' do componente 'father'.
 }
 
 /*
