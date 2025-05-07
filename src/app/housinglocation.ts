@@ -1,4 +1,4 @@
-// Interface
+// Interface Housing
 export interface HousingLocation {
   id: number;
   name: string;
