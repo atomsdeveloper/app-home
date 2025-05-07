@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 // Interface
-import { HousingLocation } from "./housingLocation";
+import { HousingLocation } from "./housinglocation";
 
 @Injectable({
   providedIn: "root", // root -> Todas as partes do aplicativo podem usar esse 'service'.
