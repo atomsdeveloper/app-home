@@ -5,7 +5,7 @@ import { CommonModule } from "@angular/common";
 import { HousingLocationComponent } from "../housing-location/housing-location.component";
 
 // Interface
-import { HousingLocation } from "../housingLocation";
+import { HousingLocation } from "../housinglocation";
 
 // Service
 import { HousingService } from "../housing.service";

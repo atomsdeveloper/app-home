@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HousingService } from "../housing.service";
 
 // Interface
-import { HousingLocation } from "../housingLocation";
+import { HousingLocation } from "../housinglocation";
 
 // Forms
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
