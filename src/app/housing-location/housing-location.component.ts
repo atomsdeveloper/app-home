@@ -5,7 +5,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
 // Interface
-import { Housinglocation } from "../housinglocation";
+import { HousingLocation } from "../housingLocation";
 
 @Component({
   selector: "app-housing-location",
@@ -28,7 +28,7 @@ import { Housinglocation } from "../housinglocation";
   styleUrls: ["./housing-location.component.css"],
 })
 export class HousingLocationComponent {
-  @Input() housingLocation!: Housinglocation;
+  @Input() housingLocation!: HousingLocation;
 }
 
 /*

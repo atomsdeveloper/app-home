@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
 import { HousingService } from "../housing.service";
 
 // Interface
-import { Housinglocation } from "../housinglocation";
+import { HousingLocation } from "../housingLocation";
 
 // Forms
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
@@ -63,7 +63,7 @@ export class DetailsComponent {
   // Usando 'Service' para receber os dados necessários e renderizar o componente corretamente.
   housingService = inject(HousingService);
   // Criando váriavel que receberá o obejto pelo 'id' para ser renderizado.
-  housingLocation: Housinglocation | undefined;
+  housingLocation: HousingLocation | undefined;
 
   // 'FormGroup' representa uma coleção de controle que compôem um formulário.
   applyForm = new FormGroup({

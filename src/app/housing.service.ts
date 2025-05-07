@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 
 // Interface
-import { Housinglocation } from "./housinglocation";
+import { HousingLocation } from "./housingLocation";
 
 @Injectable({
   providedIn: "root", // root -> Todas as partes do aplicativo podem usar esse 'service'.
 })
 export class HousingService {
   // Atributo protegido que cria uma 'interface' para 'housinglocation'.
-  protected housingLocationList: Housinglocation[] = [
+  protected housingLocationList: HousingLocation[] = [
     {
       id: 0,
       name: "Acme Fresh Start Housing",
@@ -115,14 +115,14 @@ export class HousingService {
   constructor() {}
 
   // Método que retorna o valor da lista 'housingLocationList'.
-  getHousingLocations(): Housinglocation[] {
+  getHousingLocations(): HousingLocation[] {
     return this.housingLocationList;
     // const data = await fetch(this.url);
     // return (await data.json()) ?? [];
   }
 
   // Método que retorna apenas um objeto da lista de acordo com o 'id' recebido.
-  getHousingLocationById(id: number): Housinglocation | undefined {
+  getHousingLocationById(id: number): HousingLocation | undefined {
     return this.housingLocationList.find(
       (housingLocation) => housingLocation.id === id
     );

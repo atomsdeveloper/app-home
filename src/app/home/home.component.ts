@@ -5,7 +5,7 @@ import { CommonModule } from "@angular/common";
 import { HousingLocationComponent } from "../housing-location/housing-location.component";
 
 // Interface
-import { Housinglocation } from "../housinglocation";
+import { HousingLocation } from "../housingLocation";
 
 // Service
 import { HousingService } from "../housing.service";
@@ -37,8 +37,8 @@ import { HousingService } from "../housing.service";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  housingLocationList: Housinglocation[] = [];
-  filteredLocationList: Housinglocation[] = [];
+  housingLocationList: HousingLocation[] = [];
+  filteredLocationList: HousingLocation[] = [];
   // Usando 'Service' para receber os dados necessários e renderizar o componente corretamente.
   housingService: HousingService = inject(HousingService);
 
